@@ -84,6 +84,14 @@ body.wrong {
   align-items: center;
 }
 
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
 .hide {
   display: none;
 }
