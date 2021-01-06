@@ -5,7 +5,7 @@ const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
 let shuffledQuestion, currentQuestionIndex;
 
-startButton.addEventListener("click", startGame);
+startButton.addEventListener("click", startGame, startTimer);
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   setNextQuestion();
@@ -75,7 +75,14 @@ function clearStatusClass(element) {
   element.classList.remove("wrong");
 }
 
-const countdown = [];
+function startTimer(countdown) {
+  var count = 60,
+    timer = setInterval(function () {
+      $("#counter").html(count--);
+      if (count == 1) clearInterval(timer);
+    }, 1000);
+}
+
 const questions = [
   {
     question: "What is a div?",
